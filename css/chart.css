@@ -1,0 +1,196 @@
+.bar-chart {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 80vw;
+}
+
+@media (max-width: 992px) {
+  .bar-chart {
+    flex-direction: column;
+  }
+}
+
+.bar-chart ul {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bar-chart li {
+  list-style: none;
+  margin: 0.5em 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.bar-chart .empty-bar {
+  display: inline-block;
+  justify-content: left;
+  background-color: #C0C0C0;
+  width: 100%;
+  height: 1.5em;
+  border-radius: 1em;
+}
+
+.bar-chart .bar {
+  display: inline-block;
+  background-color: var(--primary);
+  width: 100%;
+  color:white;
+  height: inherit;
+  display: flex;
+  justify-content: left;
+  /* position: relative; */
+  padding: 0 0 0 0.5em;
+  overflow: visible;
+  white-space: nowrap;
+  opacity: 0;
+  animation: bar-chart-animation 1s ease forwards;
+  border-bottom: none;
+  border-radius: 1em 0 0 1em;
+}
+
+.bar-chart label {
+  text-align: center;
+}
+
+@keyframes bar-chart-animation {
+  0% {width: 0; opacity: 1;}
+  100% {opacity: 1;}
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+.vertical-chart{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  list-style: none;
+   border-bottom:1px solid #000; 
+} 
+
+.vertical-chart > li {
+  display: grid;
+}
+
+.vertical-chart .bar-length-3 {
+  width: 60%;
+}
+
+
+.vertical-chart span {
+  display: inline-block;
+  background-color: currentColor;
+  width: 100%;
+  color:white;
+  margin: 0;
+  min-height: 30px;
+  max-height: 100px;
+  display: flex;
+  justify-content: center;
+  justify-self: left;
+  position: relative;
+  opacity: 0;
+  animation: vertical-chart-animation 1s ease forwards;
+  box-sizing: border-box;
+  border-bottom: none;
+  border-radius: 15px 0 0 15px;
+}
+
+.vertical-chart label {
+  justify-self: center;
+}
+
+@keyframes vertical-chart-animation {
+  0% {width: 0; opacity: 1;}
+  100% {opacity: 1;}
+}
+
+span.empty-bar {
+  justify-content: left;
+  margin: 0;
+  max-width: 80vw;
+  background-color: #C0C0C0;
+  height: 0;
+  animation:none;
+  opacity: 1;
+  border-radius: 15px;
+  padding: 0;
+}
+
+
+.flex-bars {
+  height: 200px;
+  display: flex;
+  list-style: none;
+  margin: 0 0 30px 0;
+  padding: 3px 0 0 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-bottom:1px solid #000;
+}
+
+@keyframes flex-bars-animation{
+  0% {height: 0; opacity: 1;}
+  100% {opacity: 1;}
+}
+
+.flex-bars > li {
+  display: inline-block;
+  background-color: currentColor;
+  height: 100%;
+  flex-grow: 1;
+  margin: 0 10px;
+  min-width: 30px;
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  animation: flex-bars-animation 0.5s ease forwards;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-bottom: none;
+}
+.flex-bars > li:before,
+.flex-bars > li:after {
+  position: absolute;
+  color: #000;
+}
+.flex-bars > li:before {
+  content: attr(data-value);
+  bottom: 100%;
+  margin-bottom: 10px;
+}
+.flex-bars > li:after {
+  content: attr(data-label);
+  top: 100%;
+  margin-top: 10px;
+}
+.flex-bars > li[data-value='0'] {
+  height:10px;
+}
+.flex-bars > li[data-value='0']:before {
+  display: none;
+}
+.flex-bars > li:nth-child(1){animation-delay:0.2s;}
+.flex-bars > li:nth-child(2){animation-delay:0.4s;}
+.flex-bars > li:nth-child(3){animation-delay:0.6s;}
+.flex-bars > li:nth-child(4){animation-delay:0.8s;}
+.flex-bars > li:nth-child(5){animation-delay:0.5s;}
+
+
+*/

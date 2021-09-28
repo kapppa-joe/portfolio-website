@@ -6,12 +6,51 @@
 } */
 :root {
   --font-family: "Titillium Web";
-  --background-alter: #F6FFCA;
 }
+
+:root:not([data-theme="dark"]), [data-theme="light"] {
+  --background: #FFF;
+  --background-alter: beige;
+  --nimlang-logo-color: var(--font-color);
+
+  --primary: #3366CC;
+  --primary-hover: #7b1fa2;
+  --primary-focus: rgba(142, 36, 170, 0.125);
+  --primary-inverse: #FFF;
+
+  --secondary: #F6FF30;
+  --secondary-hover: #FFCC33;
+  --secondary-focus:rgba(170, 142, 36, 0.125);
+  --secondary-inverse: #11191F;
+
+  --bar-chart-text: var(--background);
+}
+
+:root[data-theme="dark"] {
+  --primary: #F6FF30;
+  --primary-hover: #FFCC33;
+  --primary-focus:rgba(170, 142, 36, 0.75);
+  --primary-inverse: #11191F;
+
+  --secondary: #3366CC;
+  --secondary-hover: #7b1fa2;
+  --secondary-focus: rgba(142, 36, 170, 0.125);
+  --secondary-inverse: #FFF;
+
+  --nimlang-logo-color: #ffe953;
+  --bar-chart-text: #66F;
+
+}
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
+} 
+
+html {
+  scroll-behavior: smooth;
 }
 
 body p {
@@ -19,37 +58,132 @@ body p {
 }
 
 body h2 {
-  padding: 2em 0;
+  padding: calc(var(--spacing) * 2) 0;
 }
 
 ul li {
   list-style: None;
 }
 
-body > nav {
+#site-nav {
   position: fixed;
   top: 0; 
   left: 0;
   right: 0;
-  padding: 0 calc(var(--spacing) * 4);
+  padding: 0 0 3px calc(var(--spacing) * 2);
   display: flex;
   z-index: 999;
-  justify-content: space-between;
   box-shadow: 0px 1px 0 var(--primary);
+  background-color: var(--background);
 }
+
+#nav-menu {
+  display: grid;
+  grid-template-columns: 8em 8em 8em 8em;
+}
+
+#nav-menu .typewriter-cursor {
+  display:none;
+}
+
+
+@media (max-width:768px) {
+  #site-nav {
+    justify-content: space-between;
+    padding-left: 1em;
+  }
+  #nav-menu {
+    display: block;
+  }
+}
+
+@media (max-width:564px) {
+  #site-nav {
+    justify-content: center;
+  }
+  #site-nav > .contact-icons {
+    display: none;
+  }
+}
+
+#nav-menu li {
+  /* min-width: calc(var(--spacing) * 6); */
+
+  font-family: "Source Code Pro";
+  text-align: center;
+  transition: background-color 0.6s ease-out;
+}
+
+#nav-menu li:hover {
+  box-shadow: 0px 4px 0 var(--primary);
+}
+
+#nav-menu li.active {
+  background-color: var(--primary-focus);
+  color: var(--primary);
+  box-shadow: 0px 4px 0 var(--primary);
+}
+
+#nav-menu li a span{
+  font-size: var(--font-size);
+}
+
+#nav-menu li:hover{
+  color: var(--background);
+  background-color: var(--primary-focus);
+}
+
+@media (min-width: 992px) {
+  #nav-menu a {
+    display:inline;
+  }
+
+  #nav-menu li:hover a span{
+    font-size: 0;
+  }
+
+  #nav-menu li:hover a span::after{
+    font-size: var(--font-size);
+    content: attr(data-content);
+  }
+
+  #nav-menu li:hover .typewriter-cursor {
+    display:inline;
+    color: var(--primary);
+  }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  color: var(--color)
+}
+
+.contact-icons li {
+  padding: 0;
+}
+
 body > header {
   padding: 0;
 }
 
+
 body > section {
-  padding: calc(var(--spacing) * 4);
+  padding-bottom: calc(var(--spacing) * 4);
 }
+
+@media (min-width: 776px) {
+  body > section {
+    padding: calc(var(--spacing) * 4);
+  }
+}
+
 
 #welcome-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   height: 100vh;
-  /* background-color: var(--primary); */
 }
 
 div#intro {
@@ -57,8 +191,24 @@ div#intro {
   grid-column: 2 / 4;
 }
 
+@media (max-width: 768px) {
+  #welcome-section {
+    display:flex;
+  } 
+}
+
 #intro > h1 {
   --font-family: "Source Code Pro", monospace;
+}
+
+.typewriter-cursor {
+  animation: typewriter-cursor 1s infinite;
+}
+
+@keyframes typewriter-cursor {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 section#about,#contacts {
@@ -83,6 +233,83 @@ section#about,#contacts {
   flex: 2
 }
 
+.bar-chart {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 80vw;
+}
+
+@media (max-width: 992px) {
+  .bar-chart {
+    display: block;
+  }
+}
+
+.bar-chart ul {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1em ;
+}
+
+.bar-chart li {
+  list-style: none;
+  margin: 0.5em 0;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 10em auto;
+  align-items: baseline;
+}
+
+@media (max-width:576px) {
+  .bar-chart li {
+    display: block;
+  }
+}
+
+.bar-chart .empty-bar {
+  display: inline-block;
+  justify-content: left;
+  background-color: var(--progress-background-color);
+  width: 100%;
+  height: 1.5em;
+  border-radius: 1.5em;
+
+  box-shadow: 1px 1px 1px var(--card-box-shadow);
+}
+
+.bar-chart label {
+  display: inline;
+}
+
+.bar-chart .bar {
+  display: inline-block;
+  background-color: var(--primary);
+  width: 100%;
+  height: 100%;
+  color: var(--bar-chart-text);
+  display: flex;
+  justify-content: left;
+  padding: 0 0 0 0.5em;
+  overflow: visible;
+  white-space: nowrap;
+  opacity: 0;
+  animation: bar-chart-animation 2s ease forwards;
+  animation-play-state: paused;
+  border-bottom: none;
+  border-radius: 1.5em 0 0 1.5em;
+}
+
+.bar-chart label {
+  text-align: center;
+}
+
+@keyframes bar-chart-animation {
+  0% {width: 0; opacity: 1;}
+  100% {opacity: 1;}
+}
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -99,27 +326,6 @@ section#about,#contacts {
   color: var(--primary);
 }
 
-#skill ul {
-  min-width: 50vw;
-}
-
-li.bar {
-  display: flex;
-  align-items: center;
-}
-
-meter,progress {
-  height: 1em;
-  min-width: 10em;
-  padding: 0 1em;
-  animation: flex-bars-animation 0.5s ease forwards;
-}
-
-li label{
-  display: inline;
-  min-width: 5em;
-
-}
 
 #project-container {
   display: flex;
@@ -129,4 +335,21 @@ li label{
 #project-container > article {
   margin: 1em;
   max-width: 20em;
+}
+
+#contact {
+  min-height: 40vh;
+  background-color: var(--secondary-inverse);
+}
+
+#contact h2 {
+  color: var(--secondary)
+}
+
+p.invert,svg.invert {
+  color: var(--background)
+}
+
+#contact ul {
+  justify-content: flex-start;
 }

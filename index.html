@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dar">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,30 +18,48 @@
   <meta property="og:description" content="Welcome to my portfolio website :)">
   <meta property="og:image" content="">
 
+  <script src="scripts.js" type="text/javascript" defer></script>
+
 </head>
 
 <body>
+
   <nav id="site-nav" role="navigation">
-    <ul id="menu">
-      <li class="menu-item">Home</li>
-      <li class="menu-item">About</li>
-      <li class="menu-item">Projects</li>
-      <li class="menu-item">Contacts</li>
+    <ul id="nav-menu">
+      <li class="menu-item-welcome-section"><a href="#welcome-section"><span>Home</span></a><span class="typewriter-cursor">|</span></li>
+      <li class="menu-item-about"><a href="#about"><span>About Me</span></a><span class="typewriter-cursor">|</span></li>
+      <li class="menu-item-projects"><a href="#projects"><span>Projects</span></a><span class="typewriter-cursor">|</span></li>
+      <li class="menu-item-contact"><a href="#contact"><span>Contact</span></a><span class="typewriter-cursor">|</span></li>
     </ul>
-    <ul>
-      <li>icon placeholder</li>
+
+    <ul class="contact-icons">
+      <li><svg aria-label="github" class="icon icon-github">
+        <use href="assets/svg/symbol-defs.svg#icon-github"></use>
+      </svg>
+      </li><li><svg aria-label="email" class="icon icon-email">
+        <use href="assets/svg/symbol-defs.svg#icon-envelope"></use>
+      </svg>
+      </li><li><svg aria-label="twitter" class="icon icon-twitter">
+        <use href="assets/svg/symbol-defs.svg#icon-twitter"></use>
+      </svg>
+      </li><li><svg aria-label="linkedin" class="icon icon-linkedin">
+        <use href="assets/svg/symbol-defs.svg#icon-linkedin"></use>
+      </svg></li>
     </ul>
   </nav>
+
+
   <header>
     <section id="welcome-section">
-      <div id="intro" class="container">
+      <div id="intro" class="container-fluid">
         <h1>
-          Hey, nice to meet you! :) <br />
-          I'm Joe Fong.
+          > <span class="typewriter"></span><span class="typewriter-cursor">|</span>
         </h1>
       </div>
     </section>
   </header>
+
+
   <section id="about">
     <div class="container">
       <div class="flex-grid">
@@ -67,41 +85,86 @@
           </p>
         </div>
       </div>
-      <h2>Things I can do</h2>
-      <div id="skills" class="container flex-grid">
-        <ul class="col center">
-          <li class="bar"><svg class="icon icon-javascript">
+    </div>
+
+    <div class="container">
+      <div class="flex-grid">
+        <div class="col">
+          <h2 class="subtitle">Things I can do</h2>
+        </div>
+        <div class="col-span-2">
+        </div>
+     </div>
+      <div id="skills-chart" class="container bar-chart">
+
+        <ul>
+          <h3>Coding</h3>
+          <li>
+            <span><svg class="icon icon-javascript">
               <use href="assets/svg/symbol-defs.svg#icon-javascript"></use>
-            </svg><label>Javascript</label><meter max="100" value="85"></meter>
-            <small>Pretty good at this</small>
+            </svg><label>Javascript</label>
+            </span>
+          <span class="empty-bar"><span class="bar" style="width:80%;">
+                <small>Pretty good at this</small></span></span>
           </li>
-          <li class="bar"><svg class="icon icon-python">
-              <use href="assets/svg/symbol-defs.svg#icon-python"></use>
-            </svg><label>Python</label><meter max="100" value="60"></meter><small>Medium</small>
+          <li><span><svg class="icon icon-python-color">
+              <use href="assets/svg/symbol-defs.svg#icon-python-color"></use>
+            </svg><label>Python</label></span><span class="empty-bar"><span class="bar" style="width:60%;">
+                <small>Intermediate</small></span></span>
           </li>
-          <li class="bar"><svg class="icon icon-code">
+          <li><span>
+            <svg class="icon icon-code">
               <use href="assets/svg/symbol-defs.svg#icon-code"></use>
-            </svg><label>HTML/CSS</label><meter max="100" value="35" low="40"></meter><small>Basic</small>
+            </svg><label>HTML/CSS</label></span>
+            <span class="empty-bar"><span class="bar" style="width:35%;">
+                <small>Basic</small></span></span>
           </li>
-          <li class="bar"><svg class="icon icon-ruby">
+          <li><span>
+            <svg class="icon icon-ruby">
               <use href="assets/svg/symbol-defs.svg#icon-ruby"></use>
-            </svg><label>Ruby</label><meter max="100" value="35" low="40"></meter><small>Basic</small></li>
-          <li class="bar"><svg class="icon icon-nim">
+            </svg><label>Ruby</label>
+            </span>
+            <span class="empty-bar"><span class="bar" style="width:35%;">
+                <small>Basic</small></span></span>
+          <li><span>
+            <svg class="icon icon-nim">
               <use href="assets/svg/symbol-defs.svg#icon-nim"></use>
-            </svg><label>Nim</label><meter max="100" value="50"></meter><small>Some experiences</small>
+            </svg><label>Nim</label>
+            </span>
+            <span class="empty-bar"><span class="bar" style="width:50%;">
+                <small>Some experiences</small></span></span>
           </li>
-          <li class="bar"><svg class="icon icon-code">
+          <li><span>
+            <svg class="icon icon-code">
               <use href="assets/svg/symbol-defs.svg#icon-code"></use>
-            </svg><label>VBA</label><meter max="100" value="50"></meter><small>Some experiences</small></li>
+            </svg><label>VBA</label>
+            </span>
+            <span class="empty-bar"><span class="bar" style="width:50%;">
+                <small>Some experiences</small></span></span>
+          </li>
         </ul>
-        <ul class="col">
-          <li class="bar"><svg class="icon icon-linux">
+        <ul>
+          <h3>Other skills</h3>
+          <li><span>
+            <svg class="icon icon-linux">
               <use href="assets/svg/symbol-defs.svg#icon-linux"></use>
-            </svg><label>Linux</label><meter max="100" value="60"></meter><small>Some experiences</small></li>
-          <li class="bar"><svg class="icon icon-git">
+            </svg><label>linux</label>
+            </span>
+            <span class="empty-bar"><span class="bar" style="width:50%;">
+                <small>Not a guru but using it daily</small></span></span>
+          </li>
+          <li><span>
+            <svg class="icon icon-git">
               <use href="assets/svg/symbol-defs.svg#icon-git"></use>
-            </svg><label>Git</label><meter max="100" value="35" low="40"></meter><small>Basic operations</small></li>
+            </svg><label>git</label>
+            </span>
+            <span class="empty-bar"><span class="bar" style="width:35%;">
+                <small>Basic operations</small></span></span>
+          </li>
+
         </ul>
+
+
       </div>
   </section>
 
@@ -122,22 +185,34 @@
           during the course of #Northcoders.
         </article>
         <article>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus nibh. Vivamus scelerisque eget leo
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus nibh. Vivamus scelerisque eget
+          leo
           quis
-          convallis. Sed eu tempor magna. Nulla scelerisque pretium purus ac blandit. Mauris posuere, enim et bibendum.
+          convallis. Sed eu tempor magna. Nulla scelerisque pretium purus ac blandit. Mauris posuere, enim et
+          bibendum.
         </article>
       </div>
     </div>
   </section>
-  <section id="contacts">
-    <h2>Contact me</h2>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus nibh. Vivamus scelerisque eget leo quis
-    convallis. Sed eu tempor magna. Nulla scelerisque pretium purus ac blandit. Mauris posuere, enim et bibendum cursus,
-    lectus dolor imperdiet velit, eu faucibus nulla turpis ultricies lectus. Duis vulputate odio quis dolor viverra
-    fringilla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus convallis sed libero quis
-    fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris
-    lacinia odio nisl, eget posuere sem varius quis. In hac habitasse platea dictumst. Quisque magna velit, dignissim
-    eget vestibulum eget, sagittis ac tortor. Praesent venenatis mi non faucibus vulputate.
+  <section id="contact">
+    <div class="container">
+      <h2>Contact me</h2>
+      <p class="invert">Location: Manchester, United Kingdom</p>
+      <ul class="contact-icons">
+        <li><svg aria-label="github" class="icon invert icon-github">
+          <use href="assets/svg/symbol-defs.svg#icon-github"></use>
+        </svg>
+        </li><li><svg aria-label="email" class="icon invert icon-email">
+          <use href="assets/svg/symbol-defs.svg#icon-envelope"></use>
+        </svg>
+        </li><li><svg aria-label="twitter" class="icon invert icon-twitter">
+          <use href="assets/svg/symbol-defs.svg#icon-twitter"></use>
+        </svg>
+        </li><li><svg aria-label="linkedin" class="icon invert icon-linkedin">
+          <use href="assets/svg/symbol-defs.svg#icon-linkedin"></use>
+        </svg></li>
+      </ul>
+    </div>
   </section>
 
 </body>
