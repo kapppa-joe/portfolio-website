@@ -2,8 +2,12 @@ const getCurrentSectionId = () => {
   const sections = document.querySelectorAll("section");
 
   let candidate = "";
-  if (scrollY === 0 && sections.length > 0)
+  if (scrollY === 0 && sections.length > 0) {
     return sections[0].getAttribute("id");
+  } else if (window.innerHeight + scrollY >= document.body.offsetHeight) {
+    return sections[sections.length - 1].getAttribute("id");
+  }
+
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     if (scrollY > sectionTop - section.clientHeight / 2) {
@@ -32,6 +36,18 @@ const startBarChartAnimation = () => {
 
     bars.forEach((bar) => (bar.style.animationPlayState = "running"));
   }
+};
+
+const scrollTriggeredAnimations = () => {
+  const elementsWaiting = document.querySelectorAll(".wait-scroll");
+  const scrollEventHandler = () => {
+    elementsWaiting.forEach((elem) => {
+      if (scrollY + window.innerHeight >= elem.offsetTop) {
+        elem.classList.remove("wait-scroll");
+      }
+    });
+  };
+  return scrollEventHandler;
 };
 
 const setupNavBarHoverEffect = () => {
@@ -87,9 +103,23 @@ const setupIntroTypeWriterEffect = () => {
   );
 };
 
+const toggleColorTheme = () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    currentTheme === "light" ? "dark" : "light"
+  );
+};
+
+const setupColorThemeSwitcher = () => {
+  const elem = document.querySelector("#color-scheme-switch");
+  elem.addEventListener("click", toggleColorTheme);
+};
+
 // initialize animation scripts
 
 window.addEventListener("scroll", highlightCurrentNavItem);
-window.addEventListener("scroll", startBarChartAnimation);
+window.addEventListener("scroll", scrollTriggeredAnimations());
 setupNavBarHoverEffect();
 setupIntroTypeWriterEffect();
+setupColorThemeSwitcher();

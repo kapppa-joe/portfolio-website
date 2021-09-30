@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dar">
+<html lang="en" data-theme="light">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,8 @@
   <meta name="description" content="My portfolio website">
 
   <link rel="stylesheet" href="css/pico.min.css">
+
+<link rel="stylesheet" href="css/flickity.min.css" media="screen">
   <link rel="stylesheet" href="css/styles.css">
   <title>Joe Fong | Software Developer</title>
 
@@ -18,7 +20,8 @@
   <meta property="og:description" content="Welcome to my portfolio website :)">
   <meta property="og:image" content="">
 
-  <script src="scripts.js" type="text/javascript" defer></script>
+  <script src="./js/flickity.pkgd.js"></script>
+  <script src="./js/scripts.js" type="text/javascript" defer></script>
 
 </head>
 
@@ -27,23 +30,33 @@
   <nav id="site-nav" role="navigation">
     <ul id="nav-menu">
       <li class="menu-item-welcome-section"><a href="#welcome-section"><span>Home</span></a><span class="typewriter-cursor">|</span></li>
-      <li class="menu-item-about"><a href="#about"><span>About Me</span></a><span class="typewriter-cursor">|</span></li>
+      <li class="menu-item-about"><a href="#about"><span>About me</span></a><span class="typewriter-cursor">|</span></li>
       <li class="menu-item-projects"><a href="#projects"><span>Projects</span></a><span class="typewriter-cursor">|</span></li>
       <li class="menu-item-contact"><a href="#contact"><span>Contact</span></a><span class="typewriter-cursor">|</span></li>
     </ul>
-
     <ul class="contact-icons">
-      <li><svg aria-label="github" class="icon icon-github">
+      <li><a href="https://github.com/kapppa-joe/" target="_blank" rel="noopener"><svg aria-label="github" class="icon icon-github">
         <use href="assets/svg/symbol-defs.svg#icon-github"></use>
-      </svg>
+      </svg></a>
       </li><li><svg aria-label="email" class="icon icon-email">
         <use href="assets/svg/symbol-defs.svg#icon-envelope"></use>
       </svg>
       </li><li><svg aria-label="twitter" class="icon icon-twitter">
         <use href="assets/svg/symbol-defs.svg#icon-twitter"></use>
       </svg>
-      </li><li><svg aria-label="linkedin" class="icon icon-linkedin">
+      </li><li><a href="https://www.linkedin.com/in/joeccf/" target="_blank" rel="noopener"><svg aria-label="linkedin" class="icon icon-linkedin">
         <use href="assets/svg/symbol-defs.svg#icon-linkedin"></use>
+      </svg></a></li>
+    </ul>
+    <ul id="color-scheme-switch" role="button" aria-label="switch dark/light colortheme">
+      <li class="dark-scheme-only">
+        <div>Switch to light mode</div><svg aria-label="switch to light theme" class="icon icon-sunny">
+        <use href="assets/svg/symbol-defs.svg#icon-sunny"></use>
+        </svg>
+    </li>
+      <li class="light-scheme-only">
+        <div>Switch to dark mode</div><svg aria-label="switch to dark theme" class="icon icon-moon">
+        <use href="assets/svg/symbol-defs.svg#icon-moon"></use>
       </svg></li>
     </ul>
   </nav>
@@ -63,23 +76,24 @@
   <section id="about">
     <div class="container">
       <div class="flex-grid">
-        <div class="col">
-          <h2 class="subtitle">About me</h2>
+        <div class="col flex-col">
+          <h1 class="section-title wait-scroll">About me</h1>
+          <h4 class="section-subtitle wait-scroll">Software Engineer</h4>
         </div>
         <div class="col-span-2">
-          <p>Hi, I am Joe Fong. Currently training my coding skills at #Northcoders and will graduate in Nov 2021, I am
+          <p class="wait-scroll">Hi, I am Joe Fong. Currently training my coding skills at #Northcoders and will graduate in Nov 2021, I am
             very
             excited to embark on my journey as a software developer.</p>
 
-          <p>Previously, I have worked in an electronic manufacturer for 10 years. Although my job position wasn't
+          <p class="wait-scroll">Previously, I have worked in an electronic manufacturer for 10 years. Although my job position wasn't
             related
             to software development at all, I have always had a curiosity in coding and I love to adopt it to solve
             daily problems. I built
             some
             Excel VBA macros and little utility scripts in Python to speed up my routine offices works.</p>
-          <p> Aside from work,I also enjoyed bashing a kata on codewars or tackling a challenge from project euler.
+          <p class="wait-scroll"> Aside from work,I also enjoyed bashing a kata on codewars or tackling a challenge from project euler.
           </p>
-          <p>Learning something new and
+          <p class="wait-scroll">Learning something new and
             tinkle with it never fails to fill me with delight, and that sparks me to pursuit a career as a
             Software Developer.
           </p>
@@ -90,7 +104,7 @@
     <div class="container">
       <div class="flex-grid">
         <div class="col">
-          <h2 class="subtitle">Things I can do</h2>
+          <h4 class="section-subtitle wait-scroll">Things I can do</h4>
         </div>
         <div class="col-span-2">
         </div>
@@ -98,73 +112,71 @@
       <div id="skills-chart" class="container bar-chart">
 
         <ul>
-          <h3>Coding</h3>
-          <li>
+          <h3 class="sub-heading">Coding</h3>
+          <li class="skill">
             <span><svg class="icon icon-javascript">
               <use href="assets/svg/symbol-defs.svg#icon-javascript"></use>
             </svg><label>Javascript</label>
             </span>
-          <span class="empty-bar"><span class="bar" style="width:80%;">
+          <span class="empty-bar"><span class="bar wait-scroll" style="width:80%;">
                 <small>Pretty good at this</small></span></span>
           </li>
-          <li><span><svg class="icon icon-python-color">
+          <li class="skill"><span><svg class="icon icon-python-color">
               <use href="assets/svg/symbol-defs.svg#icon-python-color"></use>
-            </svg><label>Python</label></span><span class="empty-bar"><span class="bar" style="width:60%;">
+            </svg><label>Python</label>
+          </span><span class="empty-bar"><span class="bar wait-scroll" style="width:60%;">
                 <small>Intermediate</small></span></span>
           </li>
-          <li><span>
+          <li class="skill"><span>
             <svg class="icon icon-code">
               <use href="assets/svg/symbol-defs.svg#icon-code"></use>
             </svg><label>HTML/CSS</label></span>
-            <span class="empty-bar"><span class="bar" style="width:35%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:35%;">
                 <small>Basic</small></span></span>
           </li>
-          <li><span>
+          <li class="skill"><span>
             <svg class="icon icon-ruby">
               <use href="assets/svg/symbol-defs.svg#icon-ruby"></use>
             </svg><label>Ruby</label>
             </span>
-            <span class="empty-bar"><span class="bar" style="width:35%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:35%;">
                 <small>Basic</small></span></span>
-          <li><span>
+          <li class="skill"><span>
             <svg class="icon icon-nim">
               <use href="assets/svg/symbol-defs.svg#icon-nim"></use>
             </svg><label>Nim</label>
             </span>
-            <span class="empty-bar"><span class="bar" style="width:50%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:50%;">
                 <small>Some experiences</small></span></span>
           </li>
-          <li><span>
+          <li class="skill"><span>
             <svg class="icon icon-code">
               <use href="assets/svg/symbol-defs.svg#icon-code"></use>
             </svg><label>VBA</label>
             </span>
-            <span class="empty-bar"><span class="bar" style="width:50%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:50%;">
                 <small>Some experiences</small></span></span>
           </li>
         </ul>
         <ul>
-          <h3>Other skills</h3>
-          <li><span>
+          <h3 class="sub-heading">Other skills</h3>
+          <li class="skill"><span>
             <svg class="icon icon-linux">
               <use href="assets/svg/symbol-defs.svg#icon-linux"></use>
             </svg><label>linux</label>
             </span>
-            <span class="empty-bar"><span class="bar" style="width:50%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:50%;">
                 <small>Not a guru but using it daily</small></span></span>
           </li>
-          <li><span>
+          <li class="skill"><span>
             <svg class="icon icon-git">
-              <use href="assets/svg/symbol-defs.svg#icon-git"></use>
+              <use href="assets/svg/symbol-defs.svg#icon-git2"></use>
             </svg><label>git</label>
             </span>
-            <span class="empty-bar"><span class="bar" style="width:35%;">
+            <span class="empty-bar"><span class="bar wait-scroll" style="width:35%;">
                 <small>Basic operations</small></span></span>
           </li>
-
         </ul>
-
-
       </div>
   </section>
 
@@ -173,44 +185,77 @@
   <section id="projects">
     <div class="container">
 
-      <h2>Projects</h2>
-      <p>Some of the things I've made...</p>
+      <h2 class="section-title wait-scroll">Projects</h2>
+      <p class="section-subtitle wait-scroll">Some of the things I've made...</p>
 
-      <div id="project-container">
-        <article>
-          <header><span>nc-board-gamers</span></header>
-          <img alt="nc-board-gamers">
+
+      <div id="projects-carousel" data-flickity='{"wrapAround": true }'>
+
+        <div class="project-tile">
+          <div class="project-description">
+            <h4 class="project-title">nc-board-gamers</h4>
+          <p>
           A webapp which provides a RESTful API and mimick the backend of a discussion website. This is one of my
           project
           during the course of #Northcoders.
-        </article>
-        <article>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id purus nibh. Vivamus scelerisque eget
-          leo
-          quis
-          convallis. Sed eu tempor magna. Nulla scelerisque pretium purus ac blandit. Mauris posuere, enim et
-          bibendum.
-        </article>
+          </p>
+          <p><a href="https://nc-board-gamers.herokuapp.com/api/" role="button" target="_blank">Hosted Link</a>
+          <a href="https://github.com/kapppa-joe/backend-project-nc-games" role="button" target="_blank">Github repo</a></p>
+        </div>
+          <img alt="nc-board-gamers" src="./assets/pic/nc-broad-gamers.png">
+        </div>
+
+        <!-- placeholders below -->
+        <div class="project-tile">
+          <div class="project-description">
+            <h4 class="project-title">place holder</h4>
+          <p>
+            Bacon ipsum dolor amet filet mignon kevin jowl frankfurter shoulder landjaeger biltong pork belly capicola cupim prosciutto chuck.
+          </p>
+        </div>
+          <img alt="nc-board-gamers" src="./assets/pic/kitten400x400.jpeg">
+        </div>
+
+        <div class="project-tile">
+          <div class="project-description">
+            <h4 class="project-title">place holder</h4>
+          <p>
+            Sausage flank shankle, bacon buffalo sirloin tenderloin jowl swine strip steak. Ham shankle short loin meatball.
+          </p>
+        </div>
+          <img alt="nc-board-gamers" src="./assets/pic/400x400.jpeg">
+        </div>
+
+        <div class="project-tile">
+          <div class="project-description">
+            <h4 class="project-title">place holder</h4>
+          <p>
+            Pork loin kielbasa corned beef chicken kevin sausage cupim pork pork belly spare ribs pancetta hamburger swine.
+          </p>
+        </div>
+          <img alt="nc-board-gamers" src="./assets/pic/placeholder-400x400.jpg">
+        </div>
+      <!-- end of projects-->
       </div>
     </div>
   </section>
   <section id="contact">
-    <div class="container">
+    <div class="container invert">
       <h2>Contact me</h2>
       <p class="invert">Location: Manchester, United Kingdom</p>
-      <ul class="contact-icons">
-        <li><svg aria-label="github" class="icon invert icon-github">
+      <ul class="contact-icons invert">
+        <li><a href="https://github.com/kapppa-joe/" target="_blank" rel="noopener"><svg aria-label="github" class="icon invert icon-github">
           <use href="assets/svg/symbol-defs.svg#icon-github"></use>
-        </svg>
+        </svg></a>
         </li><li><svg aria-label="email" class="icon invert icon-email">
           <use href="assets/svg/symbol-defs.svg#icon-envelope"></use>
         </svg>
         </li><li><svg aria-label="twitter" class="icon invert icon-twitter">
           <use href="assets/svg/symbol-defs.svg#icon-twitter"></use>
         </svg>
-        </li><li><svg aria-label="linkedin" class="icon invert icon-linkedin">
+        </li><li><a href="https://www.linkedin.com/in/joeccf/" target="_blank" rel="noopener"><svg aria-label="linkedin" class="icon invert icon-linkedin">
           <use href="assets/svg/symbol-defs.svg#icon-linkedin"></use>
-        </svg></li>
+        </svg></a></li>
       </ul>
     </div>
   </section>
