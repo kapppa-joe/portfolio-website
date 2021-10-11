@@ -114,16 +114,11 @@ body > section {
 
 @media (max-width:768px) {
   #site-nav {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-left: 0;
+    justify-content: space-between;
+    padding-left: var(--spacing);
   }
   #nav-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
 }
