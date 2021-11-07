@@ -12,6 +12,7 @@
 :root:not([data-theme="dark"]), [data-theme="light"] {
   --background: #FFF;
   --background-alter: #C5C5BC;
+  --background-translucent: #ffffff88;
   --nimlang-logo-color: var(--font-color);
 
   --primary: #3366CC;
@@ -30,6 +31,7 @@
 
 :root[data-theme="dark"] {
   --background: #11191F;
+  --background-translucent: #11191F88;
   --background-alter: #586E75;
   --primary: #FFCC30;
   --primary-hover: #E5B930;
@@ -676,20 +678,24 @@ section#about p {
 #projects-carousel {
   margin-top: 2rem;
   width: 100%;
-  max-height: 80vh;
   height: auto;
 }
 
-#projects-carousel .flickity-button {
-  background-color: transparent;
+.flickity-button {
+  background-color: var(--background-translucent);
   color: var(--primary);
+  position: absolute;
+  top: 8em;
+  opacity: 0.5;
 }
-#projects-carousel .flickity-button:hover,.flickity-button:hover {
+.flickity-button:hover,.flickity-button:active {
   -webkit-box-shadow: 0 0 0 5px var(--primary);
           box-shadow: 0 0 0 5px var(--primary);
   -webkit-filter: drop-shadow(0 0 5px var(--primary));
           filter: drop-shadow(0 0 5px var(--primary));
   color: var(--primary);
+  background-color: var(--background-translucent);
+  opacity: 1;
   -webkit-transition: 0.5s ease;
   -o-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -709,6 +715,8 @@ section#about p {
   width: 80%;
   -webkit-filter: opacity(0.5) blur(2px);
           filter: opacity(0.5) blur(2px);
+  border: 0.5px solid var(--primary);
+  padding: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -730,6 +738,25 @@ section#about p {
           filter:none;
 }
 
+.project-title {
+  display: block;
+  background: var(--primary);
+  color: var(--primary-inverse);
+  padding-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.project-img {
+  padding: 0.5em;
+  margin: 0.5em;
+  min-height: 80vh;
+  height: fit-content;
+  border: 0.5px solid var(--secondary-inverse);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 @media (max-width: 776px) {
   .project-tile {
     width: 100%;
@@ -740,25 +767,22 @@ section#about p {
             flex-flow: column;
   }
   .project-tile img {
-    max-width: 100%;
-    width: 100%;
+    min-width: 200px;
     height: auto;
-    min-height: 50vh;
+  }
+  .project-img {
+    min-width: none;
+    max-height: 40vh;
+    overflow-y: hidden;
   }
 }
 
-.project-tile img {
-  height: auto;
+p.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
 }
-
-.project-title {
-  display: block;
-  background: var(--primary);
-  color: var(--primary-inverse);
-  padding-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 
 /* footer */
 
