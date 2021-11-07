@@ -6,6 +6,7 @@ A static website built with vanilla JS & CSS.
 
 Aim at achieving a clean & neat look while displaying some dynamic features.
 
+Link: https://kapppa-joe.github.io/portfolio-website/ 
 
 
 ---
