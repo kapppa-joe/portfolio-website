@@ -740,6 +740,7 @@ section#about p {
 
 .project-title {
   display: block;
+  text-align: center;
   background: var(--primary);
   color: var(--primary-inverse);
   padding-left: 0.5rem;
