@@ -758,6 +758,18 @@ section#about p {
   align-items: flex-start;
 }
 
+.project-img .demo-img {
+  display: none;
+}
+
+.project-img:hover .demo-img {
+  display: inline;
+}
+
+.project-img:hover .static-img {
+  display: none;
+}
+
 @media (max-width: 776px) {
   .project-tile {
     width: 100%;
@@ -773,7 +785,6 @@ section#about p {
   }
   .project-img {
     min-width: none;
-    max-height: 40vh;
     overflow-y: hidden;
   }
 }
